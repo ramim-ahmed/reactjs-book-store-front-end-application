@@ -5,7 +5,9 @@ export default function RootLayout() {
   return (
     <div>
       <Nav />
-      <Outlet />
+      <div className="max-w-[1170px] mx-auto">
+        <Outlet />
+      </div>
     </div>
   );
 }
