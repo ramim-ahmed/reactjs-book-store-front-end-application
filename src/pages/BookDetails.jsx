@@ -1,12 +1,12 @@
 import bookCover from '../assets/hero-img.png';
 export default function BookDetails() {
   return (
-    <div className="mt-5">
-      <div className="flex w-full">
-        <div className="bg-[#F3F3F3] p-14 rounded-md w-1/2">
+    <div className="mt-5 mx-3 lg:mx-0">
+      <div className="flex lg:flex-row flex-col w-full">
+        <div className="bg-[#F3F3F3] p-14 rounded-md lg:w-1/2 w-full">
           <img className="w-full h-[400px] object-contain" src={bookCover} alt="" />
         </div>
-        <div className="w-1/2 px-8 flex flex-col justify-between">
+        <div className="lg:w-1/2 w-full lg:px-8 px-0 mt-5 lg:mt-0 flex flex-col justify-between">
           <div className="">
             <h1 className="text-2xl font-bold font-playfair-display">The Catcher in the Rye</h1>
             <p className="mt-2 text-base font-medium text-light-grey">By : Awlad Hossain</p>

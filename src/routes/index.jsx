@@ -1,3 +1,5 @@
+import ReadBookLists from '@/components/ReadBookLists';
+import WishList from '@/components/WishList';
 import RootLayout from '@/layouts/RootLayout';
 import BookDetails from '@/pages/BookDetails';
 import Home from '@/pages/Home';
@@ -20,6 +22,16 @@ const routes = createBrowserRouter([
       {
         path: '/listed-books',
         element: <ListedBooks />,
+        children: [
+          {
+            index: true,
+            element: <ReadBookLists />,
+          },
+          {
+            path: 'wish-list',
+            element: <WishList />,
+          },
+        ],
       },
       {
         path: '/book-details/:id',
