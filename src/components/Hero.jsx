@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import heroBook from '../assets/hero-img.png';
 export default function Hero() {
   return (
@@ -6,7 +7,9 @@ export default function Hero() {
         <h1 className="lg:text-5xl text-4xl font-playfair-display font-bold">Books to freshen up</h1>
         <h1 className="lg:text-5xl text-4xl font-playfair-display font-bold">your bookshelf</h1>
         <div className="mt-5 flex justify-center lg:justify-start">
-          <button className="bg-primary text-white px-9 py-2 text-lg font-medium">View The List</button>
+          <Link to="/listed-books" className="bg-primary text-white px-9 py-2 text-lg font-medium">
+            View The List
+          </Link>
         </div>
       </div>
       <div className="mt-8 lg:mt-0">

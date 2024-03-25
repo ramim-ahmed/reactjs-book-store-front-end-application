@@ -1,4 +1,5 @@
 import RootLayout from '@/layouts/RootLayout';
+import BookDetails from '@/pages/BookDetails';
 import Home from '@/pages/Home';
 import ListedBooks from '@/pages/ListedBooks';
 import NotFoundPage from '@/pages/NotFoundPage';
@@ -19,6 +20,10 @@ const routes = createBrowserRouter([
       {
         path: '/listed-books',
         element: <ListedBooks />,
+      },
+      {
+        path: '/book-details/:id',
+        element: <BookDetails />,
       },
       {
         path: '/page-to-read',
