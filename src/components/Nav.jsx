@@ -36,7 +36,7 @@ export default function Nav() {
     </li>
   ));
   return (
-    <nav className="border-b py-2 px-3">
+    <nav className="border-b py-2 px-3 sticky top-0 bg-white z-10">
       <div className="max-w-[1170px] mx-auto">
         <div className="navbar bg-base-100 p-0">
           <div className="navbar-start">
@@ -66,7 +66,7 @@ export default function Nav() {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{pageElement}</ul>
           </div>
-          <div className="navbar-end">
+          <div className="navbar-end mr-3 md:mr-0">
             <div className="space-x-5 flex">
               <Link to="/sign-in" className="px-4 py-1 bg-primary text-white rounded-md">
                 SignIn

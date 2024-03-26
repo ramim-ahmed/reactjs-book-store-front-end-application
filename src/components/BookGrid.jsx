@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
 import { StarIcon } from '@heroicons/react/24/outline';
 import PropTypes from 'prop-types';
+
 export default function BookGrid({ bookItem }) {
   const { bookId, image, bookName, author, category, rating, tags } = bookItem || {};
   return (
-    <Link to={`/book-details/${bookId}`} className="border p-4 rounded-md">
+    <Link
+      to={`/book-details/${bookId}`}
+      className="border p-4 rounded-md duration-300 hover:scale-105 hover:duration-300"
+    >
       <div className="bg-[#F3F3F3] p-14 rounded-md">
         <img className="w-full h-[300px] object-contain" src={image} alt="" />
       </div>

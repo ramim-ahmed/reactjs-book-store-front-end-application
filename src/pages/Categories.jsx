@@ -1,4 +1,6 @@
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
+
 const bookCategories = [
   {
     category: 'Fiction',
@@ -48,23 +50,34 @@ const bookCategories = [
 
 export default function Categories() {
   return (
-    <div className="min-h-[calc(100vh-400px)] px-3">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-[calc(100vh-400px)] px-3"
+    >
       <div className="bg-[#1313130D] mt-5 py-6 rounded-md text-center px-3">
         <p className="text-3xl font-semibold">Categories</p>
       </div>
       <div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 my-10 gap-5">
           {bookCategories.map((category, index) => (
-            <div key={index} className="bg-[#1313130D] px-3 py-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.9 }}
+              key={index}
+              className="bg-[#1313130D] px-3 py-4"
+            >
               <h3 className="text-2xl font-medium">{category.category}</h3>
               <button className="text-primary mt-2 flex items-center space-x-1">
                 <p>see books</p>
                 <ArrowRightIcon className="w-4 h-4 text-primary" />
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -1,8 +1,14 @@
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 export default function SignUp() {
   return (
-    <div className="h-screen flex justify-center items-center">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+      className="h-screen flex justify-center items-center"
+    >
       <div className="flex flex-col  p-6 rounded-md sm:p-10 bg-gray-900 text-gray-100">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Sign Up</h1>
@@ -52,6 +58,6 @@ export default function SignUp() {
           </div>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 }

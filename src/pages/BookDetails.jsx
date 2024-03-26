@@ -1,6 +1,7 @@
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { saveReadBook, saveWishListBooks } from '@/utils/localStorage';
+import { motion } from 'framer-motion';
 export default function BookDetails() {
   const bookItem = useLoaderData();
   const navigate = useNavigate();
@@ -13,7 +14,12 @@ export default function BookDetails() {
     saveWishListBooks(bookItem);
   };
   return (
-    <div className="mt-5 mx-3 lg:mx-0">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+      className="mt-5 mx-3 lg:mx-0"
+    >
       <button
         onClick={() => navigate(-1 || '/')}
         className="py-3 flex items-center space-x-2 text-primary cursor-pointer"
@@ -83,6 +89,6 @@ export default function BookDetails() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

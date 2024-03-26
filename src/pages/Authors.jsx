@@ -1,5 +1,5 @@
 import { ArrowRightIcon, UserCircleIcon } from '@heroicons/react/24/outline';
-
+import { motion } from 'framer-motion';
 const bookAuthors = [
   {
     name: 'J.K. Rowling',
@@ -68,14 +68,25 @@ const bookAuthors = [
 
 export default function Authors() {
   return (
-    <div className="min-h-[calc(100vh-400px)] px-3">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-[calc(100vh-400px)] px-3"
+    >
       <div className="bg-[#1313130D] mt-5 py-6 rounded-md text-center px-3">
         <p className="text-3xl font-semibold">Authors</p>
       </div>
       <div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 my-10 gap-5">
           {bookAuthors.map((author, index) => (
-            <div key={index} className="bg-[#1313130D] px-3 py-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.9 }}
+              key={index}
+              className="bg-[#1313130D] px-3 py-4"
+            >
               <div className="flex items-center space-x-1">
                 <UserCircleIcon className="w-8 h-8" />
                 <h3 className="text-2xl font-medium">{author.name}</h3>
@@ -88,10 +99,10 @@ export default function Authors() {
                 <p>see books</p>
                 <ArrowRightIcon className="w-4 h-4 text-primary" />
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
