@@ -19,6 +19,11 @@ export default function SortedBy() {
             Rating
           </button>
         </li>
+        <li>
+          <button onClick={() => handleFilterText('page')} className="btn btn-sm btn-wide">
+            Pages
+          </button>
+        </li>
       </ul>
     </div>
   );

@@ -11,7 +11,7 @@ export default function Nav() {
       path: '/listed-books',
     },
     {
-      label: 'Page To Read',
+      label: 'Pages To Read',
       path: '/page-to-read',
     },
   ];
@@ -19,7 +19,7 @@ export default function Nav() {
     <li key={index}>
       <NavLink
         className={({ isActive }) =>
-          isActive ? 'bg-transparent border-2 border-primary text-lg text-light-grey' : ' text-lg text-light-grey'
+          isActive ? 'bg-transparent border-2 border-primary text-lg' : ' text-lg text-light-grey'
         }
         to={route.path}
       >

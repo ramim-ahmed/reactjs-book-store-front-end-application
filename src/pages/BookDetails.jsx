@@ -14,10 +14,13 @@ export default function BookDetails() {
   };
   return (
     <div className="mt-5 mx-3 lg:mx-0">
-      <div onClick={() => navigate(-1 || '/')} className="py-3 flex items-center space-x-2 text-primary cursor-pointer">
+      <button
+        onClick={() => navigate(-1 || '/')}
+        className="py-3 flex items-center space-x-2 text-primary cursor-pointer"
+      >
         <ArrowLeftIcon className="w-6 h-6" />
         <p>Back</p>
-      </div>
+      </button>
       <div className="flex lg:flex-row flex-col w-full">
         <div className="bg-[#F3F3F3] p-14 rounded-md lg:w-1/2 w-full">
           <img className="w-full h-[400px] object-contain" src={image} alt="" />

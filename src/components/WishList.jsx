@@ -24,6 +24,10 @@ export default function WishList() {
     content = wishListBooks
       .sort((a, b) => b.yearOfPublishing - a.yearOfPublishing)
       .map((bookItem) => <BookItem key={bookItem.bookId} bookItem={bookItem} />);
+  } else if (filterText === 'page') {
+    content = wishListBooks
+      .sort((a, b) => b.totalPages - a.totalPages)
+      .map((bookItem) => <BookItem key={bookItem.bookId} bookItem={bookItem} />);
   }
   return (
     <div className="px-3 my-10">

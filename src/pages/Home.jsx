@@ -14,7 +14,7 @@ export default function Home() {
         <h1 className="text-center text-black-shade text-4xl font-bold">Books</h1>
         <div className="mt-10">
           <BookGrids>
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 px-3">
               {booksList.map((bookItem) => (
                 <BookGrid key={bookItem.id} bookItem={bookItem} />
               ))}

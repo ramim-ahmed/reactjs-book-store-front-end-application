@@ -1,8 +1,9 @@
-import { UsersIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { UsersIcon, BookOpenIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 export default function BookItem({ bookItem }) {
-  const { bookId, image, bookName, author, category, rating, publisher, yearOfPublishing, tags } = bookItem || {};
+  const { totalPages, bookId, image, bookName, author, category, rating, publisher, yearOfPublishing, tags } =
+    bookItem || {};
   return (
     <div className="border p-6 rounded-md flex lg:flex-row flex-col lg:h-64 mt-5 h-auto">
       <div className="bg-[#F3F3F3] p-4 rounded-md lg:w-1/4 w-full">
@@ -29,10 +30,14 @@ export default function BookItem({ bookItem }) {
             <p>Year of Publishing: {yearOfPublishing}</p>
           </div>
         </div>
-        <div className="mt-3">
+        <div className="mt-3 flex items-center space-x-5">
           <div className="flex items-center space-x-2">
             <UsersIcon className="w-6 h-6 text-light-grey" />
             <p>Publisher: {publisher}</p>
+          </div>
+          <div className="flex items-center space-x-2">
+            <BookOpenIcon className="w-6 h-6 text-light-grey" />
+            <p>Pages: {totalPages}</p>
           </div>
         </div>
         <div className="border-b border-solid border-gray-400 opacity-30 mt-3"></div>
