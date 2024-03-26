@@ -59,9 +59,9 @@ export default function Nav() {
                 {pageElement}
               </ul>
             </div>
-            <div>
+            <Link to="/">
               <h1 className="lg:text-3xl text-xl  font-bold text-black-shade">Book Vibe</h1>
-            </div>
+            </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{pageElement}</ul>

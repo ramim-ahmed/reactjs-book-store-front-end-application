@@ -2,9 +2,10 @@
 
 Live site:
 
-- [BookVibe](https://blognest-five.vercel.app/)
+- [BookVibe](https://book-vibe.vercel.app/)
 
 Features:
+
 <ul>
 <li>Showing books data from api fetching.</li>
 <li>User can see all books in home section</li>

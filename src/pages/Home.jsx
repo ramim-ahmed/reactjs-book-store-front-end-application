@@ -1,10 +1,15 @@
 import BookGrid from '@/components/BookGrid';
 import BookGrids from '@/components/BookGrids';
 import Hero from '@/components/Hero';
-import { useLoaderData } from 'react-router-dom';
+import Loader from '@/components/Loader';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 
 export default function Home() {
   const booksList = useLoaderData();
+  const navigation = useNavigation();
+  if (navigation.state === 'loading') {
+    return <Loader />;
+  }
   return (
     <div>
       <div className="m-3 lg:m-0">
