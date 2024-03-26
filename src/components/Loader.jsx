@@ -5,7 +5,7 @@ export default function Loader({ title }) {
     <div className="h-screen flex justify-center items-center">
       <div className="flex flex-col justify-center">
         <HashLoader size={80} color="#36d7b7" />
-        {title && <p className="text-2xl font-bold mt-4">{title}</p>}
+        {title && <p className="text-2xl font-bold mt-4 text-center">{title}</p>}
       </div>
     </div>
   );
