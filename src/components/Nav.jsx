@@ -1,10 +1,18 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function Nav() {
   const pages = [
     {
       label: 'Home',
       path: '/',
+    },
+    {
+      label: 'Categories',
+      path: '/categories',
+    },
+    {
+      label: 'Authors',
+      path: '/authors',
     },
     {
       label: 'Listed Books',
@@ -60,8 +68,12 @@ export default function Nav() {
           </div>
           <div className="navbar-end">
             <div className="space-x-5 flex">
-              <button className="px-4 py-1 bg-primary text-white rounded-md">SignIn</button>
-              <button className="px-4 py-1 bg-secondary text-white rounded-md">SignUp</button>
+              <Link to="/sign-in" className="px-4 py-1 bg-primary text-white rounded-md">
+                SignIn
+              </Link>
+              <Link to="/sign-up" className="px-4 py-1 bg-secondary text-white rounded-md">
+                SignUp
+              </Link>
             </div>
           </div>
         </div>
