@@ -1,10 +1,17 @@
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+import { saveReadBook, saveWishListBooks } from '@/utils/localStorage';
 export default function BookDetails() {
   const bookItem = useLoaderData();
   const navigate = useNavigate();
   const { image, bookName, author, category, review, rating, totalPages, publisher, yearOfPublishing, tags } =
     bookItem[0] || {};
+  const handleReadBook = (bookItem) => {
+    saveReadBook(bookItem);
+  };
+  const handleWishListBook = (bookItem) => {
+    saveWishListBooks(bookItem);
+  };
   return (
     <div className="mt-5 mx-3 lg:mx-0">
       <div onClick={() => navigate(-1 || '/')} className="py-3 flex items-center space-x-2 text-primary cursor-pointer">
@@ -57,10 +64,16 @@ export default function BookDetails() {
           </div>
           <div className="mt-3">
             <div className="space-x-5 flex">
-              <button className="px-4 py-1 bg-primary text-white rounded-md focus:ring focus:ring-primary focus:bg-transparent focus:ring-offset-2 focus:text-black-shade">
+              <button
+                onClick={() => handleReadBook(bookItem[0])}
+                className="px-4 py-1 bg-primary text-white rounded-md focus:ring focus:ring-primary focus:bg-transparent focus:ring-offset-2 focus:text-black-shade"
+              >
                 Read
               </button>
-              <button className="px-4 py-1 bg-secondary text-white rounded-md focus:ring focus:ring-secondary focus:bg-transparent focus:ring-offset-2 focus:text-black-shade">
+              <button
+                onClick={() => handleWishListBook(bookItem[0])}
+                className="px-4 py-1 bg-secondary text-white rounded-md focus:ring focus:ring-secondary focus:bg-transparent focus:ring-offset-2 focus:text-black-shade"
+              >
                 WishList
               </button>
             </div>

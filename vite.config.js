@@ -14,6 +14,7 @@ export default defineConfig({
       components: `${path.resolve(__dirname, './src/components/')}`,
       public: `${path.resolve(__dirname, './public/')}`,
       pages: path.resolve(__dirname, './src/pages'),
+      utils: path.resolve(__dirname, './src/utils'),
       types: `${path.resolve(__dirname, './src/@types')}`,
     },
   },
