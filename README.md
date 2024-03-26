@@ -22,7 +22,8 @@ Tech Uses:
 - [Prop-Types](https://www.npmjs.com/package/prop-types) : that help us to declare props type pass by component .
 - [Recharts](https://recharts.org/en-US/) : A comprehensive charting library built on React components.
 - [TailwindCSS](https://tailwindcss.com/) : A css utiliy classes most popular framework.
-- [Daisy UI](https://daisyui.com/) : A component based library use tailwindcss
+- [Daisy UI](https://daisyui.com/) : A component based library use tailwindcss.
+- [Framer-Motion](https://www.framer.com/motion/) : A quick animation libray for react.
 - [React-Hot-Toast](https://react-hot-toast.com/) : that allows any action in website and success, error result showing help to way as toast.
 - [Mamba UI - Components](https://mambaui.com/components) : thats allows to use pre build huge components design with tailwind utility class just copy and paste your component.
 - [React-Spinner](https://www.npmjs.com/package/react-spinners) : that allows to use beautifully design spinner like that showing when data loaded or fetch.
