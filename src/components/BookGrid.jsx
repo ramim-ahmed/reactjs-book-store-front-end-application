@@ -1,27 +1,30 @@
 import { Link } from 'react-router-dom';
-import bookCover from '../assets/hero-img.png';
 import { StarIcon } from '@heroicons/react/24/outline';
-
-export default function BookGrid() {
+import PropTypes from 'prop-types';
+export default function BookGrid({ bookItem }) {
+  const { bookId, image, bookName, author, category, rating, tags } = bookItem || {};
   return (
-    <Link to={`/book-details/${1}`} className="border p-6 rounded-md">
+    <Link to={`/book-details/${bookId}`} className="border p-4 rounded-md">
       <div className="bg-[#F3F3F3] p-14 rounded-md">
-        <img className="w-full" src={bookCover} alt="" />
+        <img className="w-full h-[300px] object-contain" src={image} alt="" />
       </div>
       <div className="mt-5">
-        <div className="flex items-center space-x-4">
-          <p className="bg-[#23BE0A0D] text-base font-medium rounded-3xl px-4 text-primary">Young Adult</p>
-          <p className="bg-[#23BE0A0D] text-base font-medium px-4 rounded-3xl text-primary">Identity</p>
+        <div className="flex items-center space-x-2 flex-wrap">
+          {tags.map((tag, index) => (
+            <p key={index} className="bg-[#23BE0A0D] text-base font-medium rounded-3xl px-4 text-primary mt-2">
+              {tag}
+            </p>
+          ))}
         </div>
         <div className="mt-3">
-          <h1 className="text-2xl font-bold font-playfair-display">The Catcher in the Rye</h1>
-          <p className="mt-2 text-base font-medium text-light-grey">By : Awlad Hossain</p>
+          <h1 className="text-2xl font-bold font-playfair-display">{bookName}</h1>
+          <p className="mt-2 text-base font-medium text-light-grey">By : {author}</p>
         </div>
         <div className="border-b border-dotted border-light-grey mt-3"></div>
         <div className="flex items-center justify-between mt-3">
-          <p className="text-base font-medium text-light-grey">Fiction</p>
+          <p className="text-base font-medium text-light-grey">{category}</p>
           <div className="flex items-center space-x-2">
-            <p>4.5</p>
+            <p>{rating}</p>
             <StarIcon className="h-5 w-5 text-light-grey" />
           </div>
         </div>
@@ -29,3 +32,7 @@ export default function BookGrid() {
     </Link>
   );
 }
+
+BookGrid.propTypes = {
+  bookItem: PropTypes.object.isRequired,
+};

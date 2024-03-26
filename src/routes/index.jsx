@@ -1,6 +1,7 @@
 import ReadBookLists from '@/components/ReadBookLists';
 import WishList from '@/components/WishList';
 import RootLayout from '@/layouts/RootLayout';
+import { fetchBookDetailsById, fetchBooksList } from '@/lib/query';
 import BookDetails from '@/pages/BookDetails';
 import Home from '@/pages/Home';
 import ListedBooks from '@/pages/ListedBooks';
@@ -18,6 +19,7 @@ const routes = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+        loader: async () => await fetchBooksList(),
       },
       {
         path: '/listed-books',
@@ -36,6 +38,7 @@ const routes = createBrowserRouter([
       {
         path: '/book-details/:id',
         element: <BookDetails />,
+        loader: async ({ params }) => await fetchBookDetailsById(params.id),
       },
       {
         path: '/page-to-read',

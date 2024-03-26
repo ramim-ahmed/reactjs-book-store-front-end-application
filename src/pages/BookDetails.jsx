@@ -1,35 +1,43 @@
-import bookCover from '../assets/hero-img.png';
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 export default function BookDetails() {
+  const bookItem = useLoaderData();
+  const navigate = useNavigate();
+  const { image, bookName, author, category, review, rating, totalPages, publisher, yearOfPublishing, tags } =
+    bookItem[0] || {};
   return (
     <div className="mt-5 mx-3 lg:mx-0">
+      <div onClick={() => navigate(-1 || '/')} className="py-3 flex items-center space-x-2 text-primary cursor-pointer">
+        <ArrowLeftIcon className="w-6 h-6" />
+        <p>Back</p>
+      </div>
       <div className="flex lg:flex-row flex-col w-full">
         <div className="bg-[#F3F3F3] p-14 rounded-md lg:w-1/2 w-full">
-          <img className="w-full h-[400px] object-contain" src={bookCover} alt="" />
+          <img className="w-full h-[400px] object-contain" src={image} alt="" />
         </div>
         <div className="lg:w-1/2 w-full lg:px-8 px-0 mt-5 lg:mt-0 flex flex-col justify-between">
           <div className="">
-            <h1 className="text-2xl font-bold font-playfair-display">The Catcher in the Rye</h1>
-            <p className="mt-2 text-base font-medium text-light-grey">By : Awlad Hossain</p>
+            <h1 className="text-2xl font-bold font-playfair-display">{bookName}</h1>
+            <p className="mt-2 text-base font-medium text-light-grey">By : {author}</p>
           </div>
           <div className="border-b border-dotted border-light-grey mt-3"></div>
           <div className="mt-3">
-            <p className="text-base font-medium text-light-grey">Fiction</p>
+            <p className="text-base font-medium text-light-grey">{category}</p>
           </div>
           <div className="border-b border-dotted border-light-grey mt-3"></div>
           <div className="mt-3">
             <p className="text-light-grey">
-              <span className="font-bold text-black-shade">Review </span>: Sit amet consectetur. Interdum porta pulvinar
-              non sit aliquam. Aenean pulvinar blandit vel non enim elementum penatibus pellentesque ac. Nec accumsan
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, rem! Ipsam, explicabo unde
-              deserunt aspernatur, suscipit non nisi maiores labore dolore minima distinctio esse asperiores dolor
-              cumque deleniti necessitatibus enim!
+              <span className="font-bold text-black-shade">Review </span>: {review}
             </p>
           </div>
           <div className="flex items-center space-x-3 mt-3">
             <p className="font-bold">Tags</p>
             <div className="flex items-center space-x-4">
-              <p className="bg-[#23BE0A0D] text-base font-medium rounded-3xl px-4 text-primary">#Young Adult</p>
-              <p className="bg-[#23BE0A0D] text-base font-medium px-4 rounded-3xl text-primary">#Identity</p>
+              {tags.map((tag, index) => (
+                <p key={index} className="bg-[#23BE0A0D] text-base font-medium rounded-3xl px-4 text-primary mt-2">
+                  #{tag}
+                </p>
+              ))}
             </div>
           </div>
           <div className="border-b border-dotted border-light-grey mt-3"></div>
@@ -41,10 +49,10 @@ export default function BookDetails() {
               <p>Rating:</p>
             </div>
             <div>
-              <p className="font-semibold">292</p>
-              <p className="font-semibold">J.B Lippincott & Co.</p>
-              <p className="font-semibold">1960/yr</p>
-              <p className="font-semibold">4.8</p>
+              <p className="font-semibold">{totalPages}</p>
+              <p className="font-semibold">{publisher}</p>
+              <p className="font-semibold">{yearOfPublishing}</p>
+              <p className="font-semibold">{rating}</p>
             </div>
           </div>
           <div className="mt-3">
