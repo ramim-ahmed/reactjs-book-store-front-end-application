@@ -11,5 +11,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <RouterProvider router={routes} />
       <Toaster position="top-center" />
     </>
+    ,
   </React.StrictMode>,
 );

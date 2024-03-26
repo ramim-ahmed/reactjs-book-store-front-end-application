@@ -15,7 +15,7 @@ export default function BookItem({ bookItem }) {
         </div>
         <div className="flex lg:flex-row flex-col lg:items-center lg:space-x-3 mt-3">
           <div className="flex items-center space-x-3">
-            <p className="font-bold">Tags</p>
+            <p className="font-medium">Tags</p>
             <div className="flex items-center space-x-4">
               {tags.map((tag, index) => (
                 <p key={index} className="bg-[#23BE0A0D] text-base font-medium rounded-3xl px-4 text-primary mt-2">
@@ -32,7 +32,7 @@ export default function BookItem({ bookItem }) {
         <div className="mt-3">
           <div className="flex items-center space-x-2">
             <UsersIcon className="w-6 h-6 text-light-grey" />
-            <p>Publisher:{publisher}</p>
+            <p>Publisher: {publisher}</p>
           </div>
         </div>
         <div className="border-b border-solid border-gray-400 opacity-30 mt-3"></div>
